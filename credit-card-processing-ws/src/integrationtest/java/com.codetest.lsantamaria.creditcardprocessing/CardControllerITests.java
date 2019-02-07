@@ -47,7 +47,7 @@ public class CardControllerITests {
             .cardNumber("4789384727182738498")
             .name("John Addams")
             .cardType("CREDIT")
-            .limit("25000")
+            .creditLimit("25000")
             .build();
 
     AddCardResponse addCardResponse =

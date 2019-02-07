@@ -22,4 +22,7 @@ describe('CreditCardDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  /*
+    TODO: Set up tests with Karma & Jasmine (no time)
+   */
 });

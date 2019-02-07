@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { CreditCardDetailComponent } from './components/credit-card-detail/credit-card-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'credit-card-detail', component: CreditCardDetailComponent },
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {CreditCard} from "../model/creditcard";
+import {CreditCardRequest} from "../model/creditCardRequest";
 import {HttpClient, HttpClientModule, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {catchError} from "rxjs/operators";
+import {catchError, map} from "rxjs/operators";
 import {throwError} from "rxjs";
 
 @Injectable({
@@ -12,11 +12,12 @@ export class CreditCardService {
   constructor(private http: HttpClient) {
   }
 
-  add(creditCard: CreditCard){
+  add(creditCard: CreditCardRequest){
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
-    return this.http.post<CreditCard>("/cards", creditCard, httpOptions)
+    //TODO: obtain URL from global config
+    return this.http.post<CreditCardRequest>("http://localhost:8080/cards", creditCard, httpOptions)
     .pipe(
       catchError(this.handleError)
     );
@@ -26,7 +27,7 @@ export class CreditCardService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     };
-    return this.http.get("/cards", httpOptions)
+    return this.http.get("http://localhost:8080/cards", httpOptions)
     .pipe(
       catchError(this.handleError)
     );
@@ -45,6 +46,6 @@ export class CreditCardService {
     }
     // return an observable with a user-facing error message
     return throwError(
-      'Something bad happened; please try again later.');
+      'Error in request');
   };
 }

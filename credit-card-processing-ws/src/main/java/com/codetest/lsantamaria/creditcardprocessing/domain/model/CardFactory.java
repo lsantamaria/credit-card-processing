@@ -26,7 +26,8 @@ public class CardFactory {
         card.setCardNumber(cardRequest.getCardNumber());
         card.setBalance(new BigDecimal(0));
         card.setCurrency(defaultCurrency.toString());
-        card.setCreditLimit(new BigDecimal(cardRequest.getLimit()));
+        card.setCreditLimit(new BigDecimal(cardRequest.getCreditLimit()));
+        card.setCardType(cardRequest.getCardType());
         return card;
 //     Omitted for brevity
 //     case DEBIT:

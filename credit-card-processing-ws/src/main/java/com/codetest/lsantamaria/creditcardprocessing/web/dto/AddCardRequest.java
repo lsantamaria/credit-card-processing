@@ -18,10 +18,11 @@ public class AddCardRequest {
   private String name;
   @NotBlank
   @Size(max = 19)
-//  TODO: @LuhnValidation
+  //TODO: validate is a number
+  //TODO: implement @LuhnValidation validator
   private String cardNumber;
   @NotBlank
-  private String limit;
+  private String creditLimit;
 
   @NotBlank
   @ValidEnum(target = CardType.class)

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CreditCardService} from "../../services/credit-card.service";
-import {CreditCard} from "../../model/creditcard";
+import {CreditCardRequest} from "../../model/creditCardRequest";
 
 @Component({
   selector: 'app-credit-card-detail',
@@ -8,18 +8,14 @@ import {CreditCard} from "../../model/creditcard";
   styleUrls: ['./credit-card-detail.component.css']
 })
 export class CreditCardDetailComponent implements OnInit {
-  cards: Array<CreditCard> = [{
-    name: "Lluis",
-    number: "7845784756352413235",
-    balance: 45000,
-    limit: 20000
-  }];
+  cards: any;
 
   name: string;
-  number: string;
-  limit: number;
+  cardNumber: string;
+  creditLimit: number;
 
   constructor(public creditCardService: CreditCardService) {
+    this.getAllCards();
   }
 
   ngOnInit() {
@@ -27,28 +23,24 @@ export class CreditCardDetailComponent implements OnInit {
 
 
   add() {
-    let creditCard: CreditCard = new CreditCard();
+    let creditCard: CreditCardRequest = new CreditCardRequest();
     creditCard.name = this.name;
-    creditCard.limit = this.limit;
-    creditCard.number = this.number;
-
-    this.creditCardService.add(creditCard).subscribe(n => {
-
-      this.creditCardService.getAllCards().subscribe((cardList: Array<CreditCard>) => {
-        this.cards = cardList;
-      }, error1 => {
-        alert("Error getting cards " + error1);
-      });
-
+    creditCard.creditLimit = this.creditLimit;
+    creditCard.cardNumber = this.cardNumber;
+    console.log(name);
+    console.log(creditCard);
+    this.creditCardService.add(creditCard).subscribe(data => {
+      this.getAllCards();
     }, error1 => {
       alert("Error adding card " + error1);
     })
   }
 
   getAllCards() {
-    this.creditCardService.getAllCards().subscribe((cardList: Array<CreditCard>) => {
+    this.creditCardService.getAllCards().subscribe(cardList => {
       this.cards = cardList;
     }, error1 => {
+      //TODO: properly handling error
       alert("Error getting cards: " + error1);
     });
   }

@@ -1,6 +1,9 @@
 export class CreditCard{
-  number:string;
-  balance:number;
+  id:string;
+  cardNumber:string;
   name:string;
-  limit:number;
+  currency:string;
+  balance:number;
+  cardType:string;
+  creditLimit:number;
 }

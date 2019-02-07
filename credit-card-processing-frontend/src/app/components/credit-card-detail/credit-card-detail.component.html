@@ -1,7 +1,5 @@
 <title>Credit Card System</title>
 
-
-
 <body>
 
   <h1>Add</h1>
@@ -9,19 +7,19 @@
     <label>Name</label>
   </div>
   <div class="credit-card-element">
-    <input (ngModel)="name" required/>
+    <input [(ngModel)]="name" required/>
   </div>
   <div class="credit-card-element">
     <label>Number</label>
   </div>
   <div class="credit-card-element">
-    <input (ngModel)="number" required/>
+    <input [(ngModel)]="cardNumber" required/>
   </div>
   <div class="credit-card-element">
-    <label>Name</label>
+    <label>Limit</label>
   </div>
   <div class="credit-card-element">
-    <input (ngModel)="limit" required/>
+    <input [(ngModel)]="creditLimit" required/>
   </div>
   <div class="credit-card-element">
     <button (click)="add()">Add</button>
@@ -39,9 +37,9 @@
 
     <tr *ngFor="let card of cards" >
       <td>{{card.name}}</td>
-      <td>{{card.number}}</td>
+      <td>{{card.cardNumber}}</td>
       <td>{{card.balance}}</td>
-      <td>{{card.limit}}</td>
+      <td>{{card.creditLimit}}</td>
     </tr>
 
   </table>
