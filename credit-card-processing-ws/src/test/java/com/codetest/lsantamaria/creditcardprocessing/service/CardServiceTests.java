@@ -6,7 +6,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.codetest.lsantamaria.creditcardprocessing.domain.model.CreditCard;
-import com.codetest.lsantamaria.creditcardprocessing.domain.repository.CreditCardRepository;
+import com.codetest.lsantamaria.creditcardprocessing.domain.repository.CardRepository;
 import com.codetest.lsantamaria.creditcardprocessing.domain.service.CardService;
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -25,13 +25,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 public class CardServiceTests {
 
   @Mock
-  private CreditCardRepository creditCardRepository;
+  private CardRepository cardRepository;
 
   private CardService cardService;
 
   @Before
   public void setUp() {
-    cardService = new CardService(creditCardRepository);
+    cardService = new CardService(cardRepository);
   }
 
   @Test
@@ -44,11 +44,11 @@ public class CardServiceTests {
     card.setCurrency(Currency.getInstance(Locale.UK).toString());
     card.setCreditLimit(BigDecimal.valueOf(50000));
 
-    when(creditCardRepository.save(any(CreditCard.class))).thenReturn(card);
+    when(cardRepository.save(any(CreditCard.class))).thenReturn(card);
 
     cardService.saveNewCard(card);
 
-    verify(creditCardRepository, times(1)).save(any(CreditCard.class));
+    verify(cardRepository, times(1)).save(any(CreditCard.class));
   }
 
   //Add test for getting all the cards

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Cards api", description = "Operations related with cards")
 public class CardController {
 
-  private static final String CARDS_ENDPOINT = "/cards";
+  public static final String CARDS_ENDPOINT = "/cards";
 
   private final Validator validator;
   private final CardService cardService;
