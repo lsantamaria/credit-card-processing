@@ -24,6 +24,9 @@
     <java.version>11</java.version>
     <hibernate.version>5.2.10.Final</hibernate.version>
     <swagger.version>1.5.14</swagger.version>
+    <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
+    <node.version>v8.9.0</node.version>
+    <yarn.version>v1.3.2</yarn.version>
   </properties>
 
 </project>

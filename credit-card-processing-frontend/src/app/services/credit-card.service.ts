@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {CreditCardRequest} from "../model/creditCardRequest";
-import {HttpClient, HttpClientModule, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {catchError, map} from "rxjs/operators";
+import {CreditCardRequest} from "../dto/creditcardrequest";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {catchError} from "rxjs/operators";
 import {throwError} from "rxjs";
 
 @Injectable({

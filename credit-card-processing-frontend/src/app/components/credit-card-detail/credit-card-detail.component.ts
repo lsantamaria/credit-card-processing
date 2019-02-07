@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CreditCardService} from "../../services/credit-card.service";
-import {CreditCardRequest} from "../../model/creditCardRequest";
+import {CreditCardRequest} from "../../dto/creditcardrequest";
 
 @Component({
-  selector: 'app-credit-card-detail',
+  selector: 'credit-card-detail',
   templateUrl: './credit-card-detail.component.html',
   styleUrls: ['./credit-card-detail.component.css']
 })

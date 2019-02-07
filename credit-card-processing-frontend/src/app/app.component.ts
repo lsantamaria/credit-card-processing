@@ -7,11 +7,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'credit-card-processing-frontend';
+  title = 'Credit Card Processing Project';
 
   constructor(private router: Router) {
-    this.router.navigate(['/credit-card-detail']);
   }
-
-
 }
