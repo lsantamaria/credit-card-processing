@@ -44,7 +44,7 @@ public class CardControllerITests {
     AddCardRequest addCardRequest =
         AddCardRequest
             .builder()
-            .cardNumber("4789384727182738498")
+            .cardNumber("4926221243207342")
             .name("John Addams")
             .cardType("CREDIT")
             .creditLimit("25000")
