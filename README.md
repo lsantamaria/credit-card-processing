@@ -27,7 +27,7 @@ In order to compile/test/run the project, go to credit-card-processing-ws module
 ../mvnw -B test
 ```
 
-### Test
+### Run
 You can run the project either running the JAR or using spring-boot maven plugin:
 ```
 ../mvnw spring-boot:run
