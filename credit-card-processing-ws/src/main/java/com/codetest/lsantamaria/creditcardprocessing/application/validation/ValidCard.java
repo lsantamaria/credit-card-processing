@@ -13,7 +13,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = LuhnAlgorithmValidator.class)
 public @interface ValidCard {
 
-  String message() default "Provided enum value is not allowed.";
+  String message() default "Credit card number is not valid";
 
   Class<?>[] groups() default {};
 

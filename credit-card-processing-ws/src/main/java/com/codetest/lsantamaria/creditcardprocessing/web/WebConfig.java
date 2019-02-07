@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan("com.codetest.lsantamaria")
+@ComponentScan("com.codetest.lsantamaria.creditcardprocessing")
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 

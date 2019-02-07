@@ -3,7 +3,7 @@ package com.codetest.lsantamaria.creditcardprocessing.application.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class LuhnAlgorithmValidator implements ConstraintValidator<ValidEnum, String> {
+public class LuhnAlgorithmValidator implements ConstraintValidator<ValidCard, String> {
 
    @Override
    public boolean isValid(String cardNumber, ConstraintValidatorContext context) {
