@@ -1,5 +1,6 @@
 package com.codetest.lsantamaria.creditcardprocessing.web.dto;
 
+import com.codetest.lsantamaria.creditcardprocessing.application.validation.ValidCard;
 import com.codetest.lsantamaria.creditcardprocessing.application.validation.ValidEnum;
 import com.codetest.lsantamaria.creditcardprocessing.domain.model.CardType;
 import javax.validation.constraints.NotBlank;
@@ -19,8 +20,10 @@ public class AddCardRequest {
   @NotBlank
   @Size(max = 19)
   //TODO: validate is a number
-  //TODO: implement @LuhnValidation validator
+
+  @ValidCard
   private String cardNumber;
+
   @NotBlank
   private String creditLimit;
 
